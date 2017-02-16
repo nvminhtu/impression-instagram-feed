@@ -34,7 +34,7 @@ global $apif_settings, $insta;
             /* <h1 class="widget-title-insta"><span><?php echo $ins_media_slider['meta']['error_message']; ?></span></h1> */ 
         } else if (is_array($ins_media_slider['data']) || is_object($ins_media_slider['data'])) { ?>
                <div class="ct_insta_list_out clearfix">
-                    <div id="ct_insta_list" class="">
+                    <div id="ct_insta_list" class="clearfix">
                 <?php
                 foreach ($ins_media_slider['data'] as $vm):
                     if ($count == $j) {
@@ -53,17 +53,34 @@ global $apif_settings, $insta;
                     $publish_date = $vm['created_time'];
                     $caption_date = $vm['caption']['created_time'];
                 ?>
-                     <div class="ct_insta_bx01">
-                        <img src="<?php echo esc_url($imgslider); ?>" alt='<?php echo esc_attr( $img_alt ); ?>'/>
-                        <?php echo $username; ?>
-                        <?php echo $date; ?>
-                        <?php echo date('M j, Y', $publish_date); ?>
-                        <?php echo $img_alt ?>
-                        <?php if ($image_like == '1') : ?>
-                           
-                            <!-- Image like cound section end -->
+                  
+                    
+                    
+            <div class="ct_insta_bx01">
+            	<div class="ct_insta_bx01_inner">
+                	<p class="insta_img01"><img src="<?php echo esc_url($imgslider); ?>" alt="<?php echo esc_attr( $img_alt ); ?>"></p>
+                    <div class="insta_box_info clearfix">
+                    	<p class="insta_client_img"><img src="<?php echo $profile_picture; ?>" alt=""></p>
+                        <div class="insta_client_info">
+                        	<p class="insta_client_name"><?php echo $username; ?></p>
+                            <p class="insta_client_date"><?php echo date('M j, Y', $publish_date); ?></p>
+                            <p class="insta_client_des"><?php echo $img_alt ?></p>
+                        </div>
                     </div>
-                    <?php endif; ?>
+                </div>
+            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                
                     
 
                 <?php endforeach; ?>
