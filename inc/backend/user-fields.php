@@ -16,10 +16,12 @@ function my_show_extra_profile_fields( $user ) { ?>
 				<span class="description">Please enter your Instagram username.</span>
 			</td>
 		</tr>
+		<?php
+				/*
 		<tr>
 			<th><label for="insta_acess_token">Instagram Access Token</label></th>
 			<td>
-				 <?php
+				
 				 	//check value is existed or not
 				 	$insta_access_token = get_the_author_meta( 'insta_access_token', $user->ID );
                     if(isset($_GET['access_token'])){
@@ -29,20 +31,21 @@ function my_show_extra_profile_fields( $user ) { ?>
                     } else{
                         $access_token = '';
                     }
-                ?>
-				<input type="text" name="insta_access_token" id="insta_access_token" value="<?php echo esc_attr($access_token); ?>" class="regular-text" /><br />
-				<?php
+                
+				 <input type="text" name="insta_access_token" id="insta_access_token" value="<?php echo esc_attr($access_token); ?>" class="regular-text" /><br />
+			
 					//get Admin URL
 					$uri = $_SERVER['REQUEST_URI'];
 					$protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
 					$admin_url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 					//mtcode: instagram link
 				?>
+				<span class="description">Please enter your Instagram Access Token.</span>
 				<?php /* <div id="login_with_instagram"><a href="https://api.instagram.com/oauth/authorize/?client_id=54da896cf80343ecb0e356ac5479d9ec&amp;scope=basic+public_content&amp;redirect_uri=http://api.web-dorado.com/instagram/?return_url=<?php echo $admin_url; ?>&response_type=token">Click to get Access Token</a><span class="description"> (instagram access token)</span>
-				</div> */?>
+				</div> 
 			</td>
 		</tr>
-
+		*/ ?>	
 	</table>
 <?php } 
 
@@ -55,7 +58,7 @@ function my_save_extra_profile_fields( $user_id ) {
 		return false;
 
 	update_usermeta( $user_id, 'insta_username', $_POST['insta_username'] );
-	update_usermeta( $user_id, 'insta_access_token', $_POST['insta_access_token'] );
+	//update_usermeta( $user_id, 'insta_access_token', $_POST['insta_access_token'] );
 }
 
 ?>
