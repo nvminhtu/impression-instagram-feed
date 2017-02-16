@@ -57,5 +57,4 @@ function my_save_extra_profile_fields( $user_id ) {
 	update_usermeta( $user_id, 'insta_username', $_POST['insta_username'] );
 	update_usermeta( $user_id, 'insta_access_token', $_POST['insta_access_token'] );
 }
-
 ?>
