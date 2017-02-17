@@ -4,8 +4,8 @@ global $apif_settings, $insta;
     $apif_settings = get_option( 'apif_settings' );
     // $username = $apif_settings['username']; // your username
     $username = $set_username;
-    //$access_token = $apif_settings['access_token'];
-    $access_token = $set_access_token;
+    $access_token = $apif_settings['access_token'];
+    //$access_token = $set_access_token;
     $image_like = $apif_settings['active'];
     $count = 10; // number of images to show
     require_once('instagram.php');
@@ -30,9 +30,9 @@ global $apif_settings, $insta;
         <?php
         $j = 0;
         
-        if(isset($ins_media_slider['meta']['error_message'])){
-            /* <h1 class="widget-title-insta"><span><?php echo $ins_media_slider['meta']['error_message']; ?></span></h1> */ 
-        } else if (is_array($ins_media_slider['data']) || is_object($ins_media_slider['data'])) { ?>
+        if(isset($ins_media_slider['meta']['error_message'])){ ?>
+            <h1 class="widget-title-insta"><span><?php echo $ins_media_slider['meta']['error_message']; ?></span></h1>
+        <?php } else if (is_array($ins_media_slider['data']) || is_object($ins_media_slider['data'])) { ?>
                <div class="ct_insta_list_out clearfix">
                     <div id="ct_insta_list" class="clearfix">
                 <?php

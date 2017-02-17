@@ -92,7 +92,7 @@ if( !class_exists( 'IF_Class' ) ) {
          * Plugin Admin Menu
          */
         function add_if_menu() {
-            add_menu_page( __( 'AccessPress Instagram Feed', 'impression-instagram-feed' ), __( 'AccessPress Instagram Feed', 'impression-instagram-feed' ), 'manage_options', 'if-instagram-feed', array($this, 'main_page'), APIF_IMAGE_DIR . '/sc-icon.png' );
+            add_menu_page( __( 'Instagram Feed', 'impression-instagram-feed' ), __( 'Instagram Feed', 'impression-instagram-feed' ), 'manage_options', 'if-instagram-feed', array($this, 'main_page'), APIF_IMAGE_DIR . '/sc-icon.png' );
         }
         //plugins backend admin page
         function main_page() {
