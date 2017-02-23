@@ -52,37 +52,28 @@ global $apif_settings, $insta;
                     $profile_picture = $vm['user']['profile_picture'];
                     $publish_date = $vm['created_time'];
                     $caption_date = $vm['caption']['created_time'];
+
+                    $string = $img_alt;
+                    if(strlen($string) >= 300){
+                        // limit it to 300 characters
+                        $string = substr($string,0,300)." [...]";
+                    }
                 ?>
-                  
-                    
-                    
-            <div class="ct_insta_bx01">
-            	<div class="ct_insta_bx01_inner">
-                	<p class="insta_img01"><img src="<?php echo esc_url($imgslider); ?>" alt="<?php echo esc_attr( $img_alt ); ?>"></p>
-                    <div class="insta_box_info clearfix">
-                    	<p class="insta_client_img"><img src="<?php echo $profile_picture; ?>" alt=""></p>
-                        <div class="insta_client_info">
-                        	<p class="insta_client_name"><?php echo $username; ?></p>
-                            <p class="insta_client_date"><?php echo date('M j, Y', $publish_date); ?></p>
-                            <p class="insta_client_des"><?php echo $img_alt ?></p>
+                <div class="ct_insta_bx01">
+                	<div class="ct_insta_bx01_inner">
+                    	<p class="insta_img01"><img src="<?php echo esc_url($imgslider); ?>" alt="<?php echo esc_attr( $img_alt ); ?>"></p>
+                        <div class="insta_box_info clearfix">
+                        	<p class="insta_client_img"><img src="<?php echo $profile_picture; ?>" alt=""></p>
+                            <div class="insta_client_info">
+                            	<p class="insta_client_name"><?php echo $username; ?></p>
+                                <p class="insta_client_date"><?php echo date('M j, Y', $publish_date); ?></p>
+                                <p class="insta_client_des"><?php echo $string; ?></p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                
-                    
-
                 <?php endforeach; ?>
                 </div>
             </div>

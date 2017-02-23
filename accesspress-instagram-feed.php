@@ -136,16 +136,7 @@ if( !class_exists( 'IF_Class' ) ) {
          *
          */
         function register_frontend_assets() {
-           /* wp_enqueue_style( 'lightbox', APIF_CSS_DIR . '/lightbox.css', array(), APIF_VERSION );
-            wp_enqueue_style( 'apif-frontend-css', APIF_CSS_DIR . '/frontend.css', array(), APIF_VERSION );
-            wp_enqueue_style( 'apsc-font-awesome', APIF_CSS_DIR . '/font-awesome.min.css', array(), APIF_VERSION );
-            wp_enqueue_style( 'apif-gridrotator', APIF_CSS_DIR . '/gridrotator.css', array(), APIF_VERSION );
-
-            wp_enqueue_script( 'lightbox-js', APIF_JS_DIR . '/lightbox.js', array('jquery'), '2.8.1', true );
-            wp_enqueue_script( 'apif-isotope-pkgd-min-js', APIF_JS_DIR . '/isotope.pkgd.min.js', array('jquery'), '2.2.0', true );
-            wp_enqueue_script( 'apif-modernizr-custom', APIF_JS_DIR . '/modernizr.custom.26633.js', '', APIF_VERSION );
-            wp_enqueue_script( 'apif-gridrotator', APIF_JS_DIR . '/jquery.gridrotator.js', array('jquery', 'apif-modernizr-custom'), APIF_VERSION );*/
-            //wp_enqueue_script( 'apif-frontend-js', APIF_JS_DIR . '/frontend.js', array('jquery'), APIF_VERSION );
+           
         }
         //instagram feed shortcode
         function ap_instagram_feed() {
