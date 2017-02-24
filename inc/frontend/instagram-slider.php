@@ -54,20 +54,19 @@ global $apif_settings, $insta;
                     $caption_date = $vm['caption']['created_time'];
 
                     $string = $img_alt;
-                    if(strlen($string) >= 300){
+                    if(strlen($string) >= 250){
                         // limit it to 300 characters
-                        $string = substr($string,0,300)." [...]";
+                        $string = substr($string,0,250)." [...]";
                     }
                 ?>
                 <div class="ct_insta_bx01">
-                	<div class="ct_insta_bx01_inner">
-                    	<p class="insta_img01"><img src="<?php echo esc_url($imgslider); ?>" alt="<?php echo esc_attr( $img_alt ); ?>"></p>
+                	<div class="ct_insta_bx01_inner heightLine-inst01">
+                    	<p class="insta_img01"><img src="<?php echo esc_url($imgslider); ?>" data-height="216"></p>
                         <div class="insta_box_info clearfix">
                         	<p class="insta_client_img"><img src="<?php echo $profile_picture; ?>" alt=""></p>
                             <div class="insta_client_info">
                             	<p class="insta_client_name"><?php echo $username; ?></p>
                                 <p class="insta_client_date"><?php echo date('M j, Y', $publish_date); ?></p>
-                                <p class="insta_client_des"><?php echo $string; ?></p>
                             </div>
                         </div>
                     </div>
